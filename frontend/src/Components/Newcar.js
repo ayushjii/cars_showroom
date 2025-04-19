@@ -19,13 +19,31 @@ function Newcar({ submit }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3500/api/posts", form);
+      const url =
+    window.location.hostname === "localhost"
+      ? "http://localhost:3500/api/posts"
+      : "http://192.168.1.4:3500/api/posts";
+      await axios.post(url, form);
       // alert("Car added!");
       navigate("/")
     } catch (error) {
       console.error("Failed to submit car:", error);
     }
   };
+//   const handleSubmit = async (e) => {
+//   e.preventDefault();
+//   try {
+//     const url =
+//       window.location.hostname === "localhost"
+//         ? "http://localhost:3500/api/posts"
+//         : "http://192.168.1.4:3500/api/posts";
+
+//     await axios.post(url, form);
+//     navigate("/");
+//   } catch (error) {
+//     console.error("Failed to submit car:", error);
+//   }
+// };
 
   return (
     <div>

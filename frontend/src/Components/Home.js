@@ -8,8 +8,12 @@ function Home() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
+    const url =
+    window.location.hostname === "localhost"
+      ? "http://localhost:3500/posts"
+      : "http://192.168.1.4:3500/posts";
     axios
-      .get("http://localhost:3500/posts")
+      .get(url)
       .then((res) => setPosts(res.data))
       .catch((err) => console.error("Failed to fetch cars:", err));
   }, []);
