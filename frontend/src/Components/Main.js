@@ -5,7 +5,12 @@ import axios from "axios";
 function Main({ posts, setPosts }) {
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3500/api/posts/${id}`);
+      const url =
+    window.location.hostname === "localhost"
+      ? "http://localhost:3500/api/posts"
+      : "http://192.168.1.4:3500/api/posts";
+    
+      await axios.delete(url+`/${id}`);
       setPosts(posts.filter((post) => post.id !== id));
     } catch (error) {
       console.error("Failed to delete car:", error);

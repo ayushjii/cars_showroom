@@ -16,8 +16,12 @@ function EditCar() {
   });
 
   useEffect(() => {
+    const url =
+    window.location.hostname === "localhost"
+      ? "http://localhost:3500/posts"
+      : "http://192.168.1.4:3500/posts";
     axios
-      .get(`http://localhost:3500/posts/${id}`)
+      .get(url+`/${id}` , form)
       .then((res) => setForm(res.data))
       .catch((err) => console.error("Failed to fetch car:", err));
   }, [id]);
@@ -27,9 +31,12 @@ function EditCar() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      await axios.patch(`http://localhost:3500/api/posts/${id}`, form);
-      // alert("Car updated!");
+    try { 
+      const url =
+      window.location.hostname === "localhost"
+        ? `http://localhost:3500/api/posts/${id}`
+        : `http://192.168.1.4:3500/api/posts/${id}`;
+      await axios.patch(url, form);
       navigate("/");
     } catch (error) {
       console.error("Failed to update car:", error);
@@ -40,11 +47,11 @@ function EditCar() {
     <div>
       <h1>Edit Car</h1>
       <form onSubmit={handleSubmit}>
-        <input name="car_company" value={form.car_company} onChange={handleChange} required />
-        <input name="car_name" value={form.car_name} onChange={handleChange} required />
-        <input name="color" value={form.color} onChange={handleChange} required />
-        <input name="type" value={form.type} onChange={handleChange} required />
-        <input name="speed" value={form.speed} onChange={handleChange} type="number" required />
+        <input name="car_company" value={form.car_company} onChange={handleChange} />
+        <input name="car_name" value={form.car_name} onChange={handleChange} />
+        <input name="color" value={form.color} onChange={handleChange} />
+        <input name="type" value={form.type} onChange={handleChange} />
+        <input name="speed" value={form.speed} onChange={handleChange} type="number" />
         <button type="submit">Update Car</button>
       </form>
     </div>
