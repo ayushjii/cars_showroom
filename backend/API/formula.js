@@ -1,5 +1,7 @@
 const bodyParser = require("body-parser");
 const express = require("express");
+const fs = require("fs");
+const path = require("path");
 const app = express();
 
 const port = 4000;
@@ -7,9 +9,11 @@ const port = 4000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-let posts = require("../Data/cars.json");
+const dataFilePath = path.join(__dirname, "../Data/cars.json");
 
-let lastId = 15;
+let posts = JSON.parse(fs.readFileSync(dataFilePath, "utf-8"));
+
+let lastId = posts.length > 0 ? Math.max(...posts.map(p => p.id)) : 0;
 
 app.get("/posts", (req, res) => {
   console.log(posts);
@@ -35,6 +39,7 @@ app.post("/posts", (req, res) => {
   };
   lastId = newId;
   posts.push(post);
+  fs.writeFileSync(dataFilePath, JSON.stringify(posts, null, 2));
   console.log("New car has been added", post);
   res.status(201).json(post);
 });
@@ -48,17 +53,19 @@ app.patch("/posts/:id", (req, res) => {
   if (req.body.color) post.color = req.body.color;
   if (req.body.type) post.type = req.body.type;
   if (req.body.speed) post.speed = Number(req.body.speed);
+  fs.writeFileSync(dataFilePath, JSON.stringify(posts, null, 2));
   console.log(post);
   res.json(post);
 });
 
 app.delete("/posts/:id", (req, res) => {
-  const post = posts.findIndex((p) => p.id === parseInt(req.params.id));
-  if (post === -1) {
+  const postIndex = posts.findIndex((p) => p.id === parseInt(req.params.id));
+  if (postIndex === -1) {
     return res.status(404).json({ message: " Post not found" });
   }
-  const del = posts.splice(post, 1)[0];
-  console.log(post, del);
+  const del = posts.splice(postIndex, 1)[0];
+  fs.writeFileSync(dataFilePath, JSON.stringify(posts, null, 2));
+  console.log(postIndex, del);
   res.json({ message: "Post Deleted", del });
 });
 

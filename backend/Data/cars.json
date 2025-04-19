@@ -1,123 +1,138 @@
 [
-    {
-      "id": 1,
-      "car_company": "Ford",
-      "car_name": "Mustang",
-      "color": "Red",
-      "type": "Sports",
-      "speed": 150
-    },
-    {
-      "id": 2,
-      "car_company": "Chevrolet",
-      "car_name": "Corvette",
-      "color": "Blue",
-      "type": "Sports",
-      "speed": 180
-    },
-    {
-      "id": 3,
-      "car_company": "Tesla",
-      "car_name": "Roadster",
-      "color": "Silver",
-      "type": "Sports",
-      "speed": 250
-    },
-    {
-      "id": 4,
-      "car_company": "Porsche",
-      "car_name": "911 Turbo",
-      "color": "Orange",
-      "type": "Sports",
-      "speed": 210
-    },
-    {
-      "id": 5,
-      "car_company": "Nissan",
-      "car_name": "GT-R",
-      "color": "Black",
-      "type": "Sports",
-      "speed": 210
-    },
-    {
-      "id": 6,
-      "car_company": "BMW",
-      "car_name": "M4",
-      "color": "White",
-      "type": "Sports",
-      "speed": 170
-    },
-    {
-      "id": 7,
-      "car_company": "Honda",
-      "car_name": "Civic",
-      "color": "Yellow",
-      "type": "Sedan",
-      "speed": 110
-    },
-    {
-      "id": 8,
-      "car_company": "Lamborghini",
-      "car_name": "Aventador",
-      "color": "Yellow",
-      "type": "Sports",
-      "speed": 220
-    },
-    {
-      "id": 9,
-      "car_company": "Ferrari",
-      "car_name": "488 GTB",
-      "color": "Red",
-      "type": "Sports",
-      "speed": 205
-    },
-    {
-      "id": 10,
-      "car_company": "Mazda",
-      "car_name": "CX-5",
-      "color": "Red",
-      "type": "SUV",
-      "speed": 130
-    },
-    {
-      "id": 11,
-      "car_company": "Maserati",
-      "car_name": "GranTurismo",
-      "color": "Blue",
-      "type": "Sports",
-      "speed": 180
-    },
-    {
-      "id": 12,
-      "car_company": "Hyundai",
-      "car_name": "Sonata",
-      "color": "Grey",
-      "type": "Sedan",
-      "speed": 120
-    },
-    {
-      "id": 13,
-      "car_company": "McLaren",
-      "car_name": "720S",
-      "color": "Purple",
-      "type": "Sports",
-      "speed": 225
-    },
-    {
-      "id": 14,
-      "car_company": "Kia",
-      "car_name": "Stinger",
-      "color": "Black",
-      "type": "Sports",
-      "speed": 160
-    },
-    {
-      "id": 15,
-      "car_company": "Lexus",
-      "car_name": "RX 350",
-      "color": "Silver",
-      "type": "SUV",
-      "speed": 130
-    }
-  ]
-  
+  {
+    "id": 1,
+    "car_company": "Ford",
+    "car_name": "Mustang",
+    "color": "Red",
+    "type": "Sports",
+    "speed": 150
+  },
+  {
+    "id": 2,
+    "car_company": "Chevrolet",
+    "car_name": "Corvette",
+    "color": "Blue",
+    "type": "Sports",
+    "speed": 180
+  },
+  {
+    "id": 3,
+    "car_company": "Tesla",
+    "car_name": "Roadster",
+    "color": "Silver",
+    "type": "Sports",
+    "speed": 250
+  },
+  {
+    "id": 4,
+    "car_company": "Porsche",
+    "car_name": "911 Turbo",
+    "color": "Orange",
+    "type": "Sports",
+    "speed": 210
+  },
+  {
+    "id": 5,
+    "car_company": "Nissan",
+    "car_name": "GT-R",
+    "color": "Black",
+    "type": "Sports",
+    "speed": 210
+  },
+  {
+    "id": 6,
+    "car_company": "BMW",
+    "car_name": "M4",
+    "color": "White",
+    "type": "Sports",
+    "speed": 170
+  },
+  {
+    "id": 7,
+    "car_company": "Honda",
+    "car_name": "Civic",
+    "color": "Yellow",
+    "type": "Sedan",
+    "speed": 110
+  },
+  {
+    "id": 8,
+    "car_company": "Lamborghini",
+    "car_name": "Aventador",
+    "color": "Yellow",
+    "type": "Sports",
+    "speed": 220
+  },
+  {
+    "id": 9,
+    "car_company": "Ferrari",
+    "car_name": "488 GTB",
+    "color": "Red",
+    "type": "Sports",
+    "speed": 205
+  },
+  {
+    "id": 10,
+    "car_company": "Mazda",
+    "car_name": "CX-5",
+    "color": "Red",
+    "type": "SUV",
+    "speed": 130
+  },
+  {
+    "id": 11,
+    "car_company": "Maserati",
+    "car_name": "GranTurismo",
+    "color": "Blue",
+    "type": "Sports",
+    "speed": 180
+  },
+  {
+    "id": 12,
+    "car_company": "Hyundai",
+    "car_name": "Sonata",
+    "color": "Grey",
+    "type": "Sedan",
+    "speed": 120
+  },
+  {
+    "id": 13,
+    "car_company": "McLaren",
+    "car_name": "720S",
+    "color": "Purple",
+    "type": "Sports",
+    "speed": 225
+  },
+  {
+    "id": 14,
+    "car_company": "Kia",
+    "car_name": "Stinger",
+    "color": "Black",
+    "type": "Sports",
+    "speed": 160
+  },
+  {
+    "id": 15,
+    "car_company": "Lexus",
+    "car_name": "RX 350",
+    "color": "Silver",
+    "type": "SUV",
+    "speed": 130
+  },
+  {
+    "id": 16,
+    "car_company": "tata",
+    "car_name": "currv",
+    "color": "black",
+    "type": "suv",
+    "speed": 110
+  },
+  {
+    "id": 17,
+    "car_company": "bmw",
+    "car_name": "AG100",
+    "color": "royal",
+    "type": "sedan",
+    "speed": 200
+  }
+]
