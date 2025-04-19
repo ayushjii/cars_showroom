@@ -24,7 +24,7 @@ function EditCar() {
       .get(url+`/${id}` , form)
       .then((res) => setForm(res.data))
       .catch((err) => console.error("Failed to fetch car:", err));
-  }, [id]);
+  }, );
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });

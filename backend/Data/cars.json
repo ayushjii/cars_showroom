@@ -134,5 +134,27 @@
     "color": "royal",
     "type": "sedan",
     "speed": 200
+  },
+  {
+    "id": 18,
+    "color": "red",
+    "type": "electric",
+    "speed": 180
+  },
+  {
+    "id": 19,
+    "car_company": "Ford",
+    "car_name": "GT 150",
+    "color": "black",
+    "type": "Sports",
+    "speed": 100
+  },
+  {
+    "id": 20,
+    "car_company": "Ford",
+    "car_name": "GT 150",
+    "color": "black",
+    "type": "Sports",
+    "speed": 100
   }
 ]

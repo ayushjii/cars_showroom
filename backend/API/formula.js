@@ -31,8 +31,8 @@ app.post("/posts", (req, res) => {
   const newId = (lastId += 1);
   const post = {
     id: newId,
-    car_company: req.body.company,
-    car_name: req.body.name,
+    car_company: req.body.car_company,
+    car_name: req.body.car_name,
     color: req.body.color,
     type: req.body.type,
     speed: Number(req.body.speed),
@@ -41,7 +41,6 @@ app.post("/posts", (req, res) => {
   posts.push(post);
   fs.writeFileSync(dataFilePath, JSON.stringify(posts, null, 2));
   console.log("New car has been added", post);
-  res.status(201).json(post);
 });
 
 app.patch("/posts/:id", (req, res) => {
