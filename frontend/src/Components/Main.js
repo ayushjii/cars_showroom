@@ -1,32 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
-function Main({ posts }) {
+function Main({ posts, setPosts }) {
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3500/api/posts/${id}`);
+      setPosts(posts.filter((post) => post.id !== id));
+    } catch (error) {
+      console.error("Failed to delete car:", error);
+    }
+  };
+
   return (
     <div>
       <h1>CARS</h1>
-      <Link to={"/newcar"}>
-        <button id="newcars">New Cars</button>
+      <Link to="/new">
+        <button>Add New Car</button>
       </Link>
-      <div>
-        <ul id="carslist">
-          {posts.map((post) => (
-            <li key={posts.id}>
-              <h1>{posts.car_name}</h1>
-              <h3>{posts.car_company}</h3>
-              <h5>{posts.color}</h5>
-              <h5>{posts.type}</h5>
-              <h5>{posts.speed}</h5>
-              <a className="edit" href={`/edit/${post.id}`}>
-                Edit
-              </a>
-              <a className="delete" href={`/api/posts/delete/${post.id}`}>
-                Delete
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>
+            <h2>{post.car_name}</h2>
+            <p>{post.car_company} | {post.color} | {post.type} | {post.speed} km/h</p>
+            <Link to={`/edit/${post.id}`}>Edit</Link>
+            <button onClick={() => handleDelete(post.id)}>Delete</button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
